@@ -1,16 +1,12 @@
 package edu.macalester.comp124.life;
 
 /**
- * RuleSet implementing Conway's Game of Life.
- *
- * @author Michael Ekstrand <ekstrand@cs.umn.edu>
+ * Created by iangoodbar on 2/6/14.
  */
-public class Conway implements RuleSet {
-
+public class HighLife implements RuleSet{
     public String getName() {
-        return "Conway's Rules";
+        return "HighLife";
     }
-
     /**
      * Applies the rules of Conway's Game of Life.
      *
@@ -19,18 +15,18 @@ public class Conway implements RuleSet {
      * @return true if the cell should be alive in the next generation.
      */
     public boolean applyRules(boolean isAlive, int neighborCount) {
-        if (isAlive && neighborCount < 2){
+        if (neighborCount < 2){
             return false;
         }
-        else if (isAlive && neighborCount > 3){
+        else if ((neighborCount > 3) && (neighborCount != 6)){
             return false;
         }
-        else if (!isAlive && neighborCount == 3){
+        else if ((neighborCount == 3) || (neighborCount == 6)){
             return true;
         }
         else{
-            return isAlive;
-        }
+            return isAlive;}
 
     }
 }
+//>3 and != 6

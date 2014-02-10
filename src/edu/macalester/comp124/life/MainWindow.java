@@ -22,7 +22,7 @@ import java.text.ParseException;
 public class MainWindow extends JFrame
     implements ActionListener, ChangeListener {
     
-    private static final int RUN_DELAY = 250;
+    private static final int RUN_DELAY = 100;
 
     private JButton bStep;
     private JToggleButton tbRun;
@@ -270,8 +270,7 @@ public class MainWindow extends JFrame
             if (b.getActionCommand().equals("conway")) {
                 board.setRuleSet(new Conway());
             } else {
-                // Uncomment for HighLife
-                // board.setRuleSet(new HighLife());
+                board.setRuleSet(new HighLife());
             }
         }
     }

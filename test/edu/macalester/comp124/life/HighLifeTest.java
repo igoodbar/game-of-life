@@ -5,13 +5,11 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Test cases for the Conway ruleset
- * @author Michael Ekstrand <ekstrand@cs.umn.edu>
- *
- */
-public class ConwayTest {
 
+/**
+ * Created by iangoodbar on 2/6/14.
+ */
+public class HighLifeTest {
     private RuleSet rules;
 
     /**
@@ -25,7 +23,7 @@ public class ConwayTest {
     @Before
     public void setUp() throws Exception {
         // create a new rule set
-        rules = new Conway();
+        rules = new HighLife();
     }
 
     /**
@@ -45,6 +43,7 @@ public class ConwayTest {
     @Test
     public void testComeToLife() {
         assertTrue(rules.applyRules(false, 3));
+        assertTrue(rules.applyRules(false, 6));
     }
 
     /**
@@ -55,7 +54,6 @@ public class ConwayTest {
     public void testStayDead() {
         assertFalse(rules.applyRules(false, 2));
         assertFalse(rules.applyRules(false, 4));
-        assertFalse(rules.applyRules(false, 6));
         assertFalse(rules.applyRules(false, 8));
     }
 
@@ -94,3 +92,4 @@ public class ConwayTest {
         assertFalse(rules.applyRules(true, 7));
     }
 }
+
